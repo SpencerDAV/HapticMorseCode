@@ -37,7 +37,7 @@ def verify(string):
     keys = CODE.keys()
     for char in string:
         if char.upper() not in keys and char != ' ':
-         sys.exit('Error the charcter ' + char + ' cannot be translated to Morse Code')
+            sys.exit('Error the charcter ' + char + ' cannot be translated to Morse Code')
 
 def main():
     arduino = serial.Serial('COM4', 9600)
@@ -50,14 +50,14 @@ def main():
 
     for char in msg:
         if char == ' ':
-            print ' '*7,
-	    time.sleep(SEVEN_UNITS)
+            print (' '*7),
+            time.sleep(SEVEN_UNITS)
         else:
-	    print CODE[char.upper()],
-	    #pygame.mixer.music.load(PATH + char.upper() + '_morse_code.ogg')
-	    #pygame.mixer.music.play()
-	    time.sleep(THREE_UNITS)
+            print (CODE[char.upper()]),
+            #pygame.mixer.music.play()
+            #pygame.mixer.music.load(PATH + char.upper() + '_morse_code.ogg')
+            time.sleep(THREE_UNITS)
 
-if __name__ == &amp;quot;__main__&amp;quot;:
+if __name__ == '__main__':
     main()
 
